@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Uygulama adı -->
+    <string name="app_name">Mystica</string>
+
+    <!-- Splash & Navigation -->
+    <string name="title_activity_splash_screen">splash_screen</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <!-- Genel açıklama -->
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem...
+    </string>
+
+    <!-- Giriş (Login) -->
+    <string name="login_title">Login</string>
+    <string name="your_email">Your Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="log_in">Log in</string>
+    <string name="invalid_username">Not a valid email</string>
+    <string name="invalid_password">Password must be &gt; 5 characters</string>
+    <string name="login_failed">Login failed</string>
+    <string name="welcome">Welcome!</string>
+
+    <!-- Kayıt (Register) -->
+    <string name="sign_up">Sign up</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="create_account">Create Account</string>
+    <string name="register_footer">Carefully selected to give you the very best Mystica insights &amp; Love</string>
+    <string name="register_text">Don’t have an account? <u>Register</u>
+    </string>
+
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <string name="title_mystica">Mystica</string>
+    <string name="title_daily_message">Daily Message</string>
+    <string name="sample_daily_message">You are exactly where you need to be. Trust your path.</string>
+
+    <string name="nav_profile">Profile</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_angel">Angel</string>
+    <string name="nav_tarot">Tarot</string>
+    <string name="nav_thought">Thought</string>
+    <string name="sample_thought">Your energy is aligned. Keep going.</string>
+
+
+</resources>

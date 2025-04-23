@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "299363115312",
+    "project_id": "mystica-fffbb",
+    "storage_bucket": "mystica-fffbb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299363115312:android:e999d4f39b4aa831b4a8f5",
+        "android_client_info": {
+          "package_name": "com.example.mystica"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv9h-GYNtm2Ma5mcuMy01qt80RUajwRp0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
