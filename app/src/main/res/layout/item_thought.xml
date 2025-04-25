@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_thought_box"
+    android:padding="12dp">
+
+    <!-- Tarih -->
+    <TextView
+        android:id="@+id/tvThoughtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24.04.2025"
+        android:textSize="12sp"
+        android:textColor="@color/textDark"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true" />
+
+    <!-- Düşünce Metni -->
+    <TextView
+        android:id="@+id/tvThoughtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bugün kendime zaman ayırmak istiyorum."
+        android:textSize="14sp"
+        android:textColor="@color/textDark"
+        android:layout_below="@id/tvThoughtDate"
+        android:layout_marginTop="8dp" />
+</RelativeLayout>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/creamBackground">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:layout_above="@+id/bottomNavbar"
+        tools:ignore="NotSibling">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/appTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_mystica"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/textDark"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="16dp" />
+
+            <TextView
+                android:id="@+id/tvDailyMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_daily_message"
+                android:textSize="20sp"
+                android:textColor="@color/textDark"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvDailyMessageContent"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_thought_box"
+                android:text="@string/sample_daily_message"
+                android:textColor="@color/textDark"
+                android:textSize="16sp"
+                android:padding="16dp"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Günlük düşünce görüntüleme alanı -->
+            <TextView
+                android:id="@+id/tvDailyThought"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/textDark"
+                android:textSize="14sp"
+                android:background="@drawable/bg_thought_box"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Kullanıcı giriş alanı ve buton -->
+            <EditText
+                android:id="@+id/etUserThought"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Write your daily thoughts..."
+                android:background="@drawable/bg_thought_box"
+                android:textColor="@color/textDark"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnSubmitThought"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Thought"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/buttonPink"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="8dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Favori Tarot Kartları -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/sun"
+                    android:layout_marginHorizontal="8dp"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/temperence"
+                    android:layout_marginHorizontal="8dp"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/star"
+                    android:layout_marginHorizontal="8dp"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/navbarBackground"
+        android:padding="12dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/bottomNavbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- Profile -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginHorizontal="16dp">
+
+                <ImageButton
+                    android:id="@+id/btnProfile"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_profile"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Profile" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:textSize="12sp"
+                    android:textColor="@color/textDark"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Home -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginHorizontal="16dp">
+
+                <ImageButton
+                    android:id="@+id/btnHome"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_home"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Home" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home"
+                    android:textSize="12sp"
+                    android:textColor="@color/textDark"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Settings -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginHorizontal="16dp">
+
+                <ImageButton
+                    android:id="@+id/btnSettings"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_settings"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Settings" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:textSize="12sp"
+                    android:textColor="@color/textDark"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Angel -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginHorizontal="16dp">
+
+                <ImageButton
+                    android:id="@+id/btnAngel"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_angel"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Angel" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Angel"
+                    android:textSize="12sp"
+                    android:textColor="@color/textDark"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Tarot -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginHorizontal="16dp">
+
+                <ImageButton
+                    android:id="@+id/btnTarot"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_tarot"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Tarot" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tarot"
+                    android:textSize="12sp"
+                    android:textColor="@color/textDark"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Thought -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginHorizontal="16dp">
+
+                <ImageButton
+                    android:id="@+id/btnThought"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_thought"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Thought" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thought"
+                    android:textSize="12sp"
+                    android:textColor="@color/textDark"
+                    android:gravity="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+</RelativeLayout>

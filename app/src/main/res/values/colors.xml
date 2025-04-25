@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Arka plan renkleri -->
+    <color name="extraLightCream">#FFFDF9</color> <!-- Neredeyse beyaz yumuşak krem -->
+    <color name="lightCream">#FAF3ED</color> <!-- Hafif sıcak krem -->
+    <color name="roseCream">#FBE9E7</color> <!-- Soft pembe-krem geçişi -->
+    <color name="creamBackground">#FAF5F0</color> <!-- Sayfa arka planı -->
+
+    <!-- Yazı renkleri -->
+    <color name="textBrown">#3A2B28</color> <!-- Koyu yazı -->
+    <color name="darkBrown">#4B2E2A</color> <!-- Butonlar ve başlıklar -->
+    <color name="textDark">#3E2C29</color> <!-- Açıklama yazıları -->
+
+    <!-- Butonlar -->
+    <color name="mysticBrown">#6A3F38</color> <!-- Buton rengi -->
+    <color name="pinkPrimary">#E9A3C8</color> <!-- Pembe tema -->
+
+    <!-- Splash ve özel tonlar -->
+    <color name="pinkSplash">#FFD9EC</color>
+    <color name="pinkText">#F9A9CD</color>
+    <color name="pinkShadow">#D96D9C</color>
+
+    <!-- Temel renkler -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Butonlar -->
+    <color name="buttonPink">#D6A5C0</color>
+    <color name="buttonDark">#6B4F3B</color>
+
+    <!-- Navbar -->
+    <color name="navbarBackground">#E8DCCF</color>
+</resources>
