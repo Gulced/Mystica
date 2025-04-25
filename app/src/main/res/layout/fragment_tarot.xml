@@ -1,13 +1,41 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/extraLightCream"
+    android:orientation="vertical"
+    android:background="@color/creamBackground"
+    android:padding="16dp"
     android:gravity="center">
 
+    <!-- Tarot Kartı (arka tarafı) -->
+    <ImageView
+        android:id="@+id/ivTarotCard"
+        android:layout_width="200dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:scaleType="fitXY" />
+
+    <!-- Card Meaning Text -->
     <TextView
-        android:text="Tarot Cards Will Be Drawn 🃏"
-        android:textSize="18sp"
+        android:id="@+id/tvCardMeaning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
         android:textColor="@color/textDark"
+        android:layout_marginTop="24dp"
+    android:padding="16dp"
+    android:background="@drawable/bg_thought_box"
+    android:gravity="center" />
+
+    <!-- Pick Card Button -->
+    <Button
+        android:id="@+id/btnPickCard"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-</FrameLayout>
+        android:layout_height="wrap_content"
+        android:text="Pick a Tarot Card"
+        android:backgroundTint="@color/buttonPink"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp" />
+</LinearLayout>
