@@ -1,5 +1,9 @@
 package com.example.mystica.activities;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -18,17 +22,19 @@ import com.example.mystica.fragments.ProfileFragment;
 import com.example.mystica.fragments.RegisterFragment;
 import com.example.mystica.fragments.SettingsFragment;
 import com.example.mystica.fragments.TarotDrawFragment;
+import com.example.mystica.utils.NotificationHelper; // Günaydın bildirimi için Receiver'ı ekliyoruz
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
     private LinearLayout bottomNavbar;
-
     private ImageButton btnHome, btnProfile, btnSettings, btnAngel, btnTarot, btnThought;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // activity_main.xml'e göre
+        setContentView(R.layout.activity_main);
 
         // Navbar ve butonları bağla
         bottomNavbar = findViewById(R.id.bottomNavbar);
@@ -47,10 +53,13 @@ public class MainActivity extends AppCompatActivity {
         btnTarot.setOnClickListener(v -> loadFragment(new TarotDrawFragment()));
         btnThought.setOnClickListener(v -> loadFragment(new DailyEmotionFragment()));
 
-        // Uygulama ilk açıldığında login ekranı yüklensin
+        // İlk açılışta login ekranı gelsin
         if (savedInstanceState == null) {
             loadFragment(new LoginFragment());
         }
+
+        // Günaydın bildirimi için alarmı kur
+        scheduleDailyGoodMorningNotification();
     }
 
     // Fragment'ları yükleyen ana fonksiyon
@@ -73,5 +82,31 @@ public class MainActivity extends AppCompatActivity {
     // Girişten sonra Home'a geçmek için
     public void loadHomeFragment() {
         loadFragment(new HomeFragment());
+    }
+
+    // Sabah 09:00'da her gün Günaydın bildirimi kuran fonksiyon
+    private void scheduleDailyGoodMorningNotification() {
+        Intent intent = new Intent(this, NotificationHelper.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY, 9);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+
+        // Eğer saat 9:00 geçmişse, yarın için kur
+        if (calendar.getTimeInMillis() < System.currentTimeMillis()) {
+            calendar.add(Calendar.DAY_OF_YEAR, 1);
+        }
+
+        alarmManager.setRepeating(
+                AlarmManager.RTC_WAKEUP,
+                calendar.getTimeInMillis(),
+                AlarmManager.INTERVAL_DAY,
+                pendingIntent
+        );
     }
 }

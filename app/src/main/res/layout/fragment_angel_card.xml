@@ -36,7 +36,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/buttonPink"
-        android:text="Pick an Tarot Card"
+        android:text="Pick an Angel Card"
         android:textColor="@android:color/white" />
 </LinearLayout>
 

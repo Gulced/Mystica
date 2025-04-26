@@ -1,13 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@color/extraLightCream"
-    android:gravity="center">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:text="Settings will be available soon ⚙️"
-        android:textSize="18sp"
-        android:textColor="@color/textDark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Sol üst köşede büyük 'Settings' yazısı -->
+            <TextView
+                android:id="@+id/tvSettingsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="@color/darkBrown"
+                android:textSize="26sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_gravity="start"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Açıklama -->
+            <TextView
+                android:id="@+id/tvSettingsDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Would you like to change your name, email and password?"
+                android:textColor="@color/textBrown"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Ad Soyad -->
+            <EditText
+                android:id="@+id/etFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:backgroundTint="@color/textBrown"
+                android:textColor="@color/textBrown"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Email -->
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:backgroundTint="@color/textBrown"
+                android:textColor="@color/textBrown"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Şifre -->
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:backgroundTint="@color/textBrown"
+                android:textColor="@color/textBrown"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Bilgileri Güncelle Butonu -->
+            <Button
+                android:id="@+id/btnUpdateInfo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Update Information"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/darkBrown"
+                android:layout_marginTop="8dp" />
+
+            <!-- Profili Sil Butonu -->
+            <Button
+                android:id="@+id/btnDeleteProfile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Delete Profile"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/textBrown"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
