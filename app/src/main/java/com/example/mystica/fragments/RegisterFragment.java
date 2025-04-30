@@ -6,8 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,31 +13,27 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.mystica.R;
+import com.example.mystica.databinding.FragmentRegisterBinding;
 import com.example.mystica.firebase.FirebaseManager;
 import com.example.mystica.utils.SharedPrefManager;
 
 public class RegisterFragment extends Fragment {
 
-    private EditText etEmail, etPassword, etFirstName, etLastName;
-    private Button btnCreateAccount;
+    private FragmentRegisterBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_register, container, false);
+        // ViewBinding'i başlat
+        binding = FragmentRegisterBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
 
-        etFirstName = view.findViewById(R.id.etFirstName);
-        etLastName = view.findViewById(R.id.etLastName);
-        etEmail = view.findViewById(R.id.etEmail);
-        etPassword = view.findViewById(R.id.etPassword);
-        btnCreateAccount = view.findViewById(R.id.btnCreateAccount);
-
-        btnCreateAccount.setOnClickListener(v -> {
-            String firstName = etFirstName.getText().toString().trim();
-            String lastName = etLastName.getText().toString().trim();
-            String email = etEmail.getText().toString().trim();
-            String password = etPassword.getText().toString().trim();
+        binding.btnCreateAccount.setOnClickListener(v -> {
+            String firstName = binding.etFirstName.getText().toString().trim();
+            String lastName = binding.etLastName.getText().toString().trim();
+            String email = binding.etEmail.getText().toString().trim();
+            String password = binding.etPassword.getText().toString().trim();
 
             if (TextUtils.isEmpty(firstName) || TextUtils.isEmpty(lastName)
                     || TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
@@ -52,15 +46,14 @@ public class RegisterFragment extends Fragment {
                 public void onSuccess() {
                     String fullName = firstName + " " + lastName;
 
-                    // ✅ Save full name to SharedPreferences
+                    // Ad soyad SharedPreferences'e kaydediliyor
                     SharedPrefManager.saveUsername(requireContext(), fullName);
                     Log.d("RegisterFragment", "Saved user full name: " + fullName);
 
-                    // ✅ Optional debug toast
                     Toast.makeText(getContext(), "Welcome, " + fullName, Toast.LENGTH_SHORT).show();
 
-                    // ✅ Navigate to LoginFragment
-                    getActivity().getSupportFragmentManager()
+                    // LoginFragment'e geçiş
+                    requireActivity().getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.fragment_container, new LoginFragment())
                             .addToBackStack(null)
@@ -75,5 +68,11 @@ public class RegisterFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null; // Bellek sızıntısı engellenir
     }
 }

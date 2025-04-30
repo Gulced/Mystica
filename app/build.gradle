@@ -6,7 +6,9 @@ plugins {
 android {
     namespace 'com.example.mystica'
     compileSdk 34
-
+    viewBinding {
+        enabled = true
+    }
     defaultConfig {
         applicationId "com.example.mystica"
         minSdk 26
